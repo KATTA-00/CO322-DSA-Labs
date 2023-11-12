@@ -60,27 +60,26 @@
     /**********************************************************
      *     Implementation of sorting algorithms               *
      *********************************************************/
-    static void buble_sort(int [] data)  {
+
+	 static void buble_sort(int [] data)  {
 		// Implement 
 		boolean flag = true;
-
 		while (flag) {
 			flag = false;
 			for (int j=0; j < data.length-1; j++){
+
 				if (data[j] > data[j+1])
 				{
 					swap(data, j, j+1);
 					flag = true;
 				}
+				
 			}
-
 		}
-
     }
 
     static void selection_sort(int [] data) {
 		// Implement 
-
 		for (int i=0; i<data.length-1; i++){
 			int minmum = data[i];
 			int index = i;
@@ -99,7 +98,6 @@
 
     static void insertion_sort(int [] data) {
 		// Implement
-
 		for (int i=1; i<data.length; i++){
 
 				for (int j=i; j>0; j--){
@@ -107,12 +105,10 @@
 					if (data[j] > data[j-1]){
 						break;
 					}
-					
+
 					swap(data, j, j-1);
 				}
-
 		}
-
     }
 
 		       
@@ -128,9 +124,9 @@
 		int[] arr2_best = create_best_data(10);
 		int[] arr3_best = create_best_data(10);
 
-		int[] arr1_normal = create_rand_data(10);
-		int[] arr2_normal = create_rand_data(10);
-		int[] arr3_normal = create_rand_data(10);
+		int[] arr1_avg = create_rand_data(10);
+		int[] arr2_avg = create_rand_data(10);
+		int[] arr3_avg = create_rand_data(10);
 
 
 		int[] arr1_worst = create_worst_data(10);
@@ -141,7 +137,7 @@
 		long start, end;
 
 		// Bubble Sort
-		System.out.println("------Bubble Sort------");
+		System.out.println("------ Bubble Sort ------");
 
 		System.out.println("Best Case:");
 		display(arr1_best);
@@ -150,19 +146,18 @@
 		buble_sort(arr1_best);
 		end = System.nanoTime();
 		display(arr1_best);
-		System.out.println("Time: " + (end-start) + "ms");
-		display(arr1_best);
+		System.out.println("Time: " + (end-start) + "ns");
 		
 		System.out.println();
 		
-		System.out.println("Normal Case:");
-		display(arr1_normal);
+		System.out.println("Average Case:");
+		display(arr1_avg);
 		// sort the array and get the times
 		start = System.nanoTime();
-		buble_sort(arr1_normal);
+		buble_sort(arr1_avg);
 		end = System.nanoTime();
-		System.out.println("Time: " + (end-start) + "ms");
-		display(arr1_normal);
+		display(arr1_avg);
+		System.out.println("Time: " + (end-start) + "ns");
 		
 		System.out.println();
 		
@@ -172,13 +167,13 @@
 		start = System.nanoTime();
 		buble_sort(arr1_worst);
 		end = System.nanoTime();
-		System.out.println("Time: " + (end-start) + "ms");
 		display(arr1_worst);
+		System.out.println("Time: " + (end-start) + "ns");
 		
 		System.out.println();
 		
 		// Selection Sort
-		System.out.println("-----Selection Sort-----");
+		System.out.println("----- Selection Sort -----");
 
 		System.out.println("Best Case:");
 		display(arr2_best);
@@ -187,20 +182,18 @@
 		selection_sort(arr2_best);
 		end = System.nanoTime();
 		display(arr2_best);
-		System.out.println("Time: " + (end-start) + "ms");
+		System.out.println("Time: " + (end-start) + "ns");
 		
 		System.out.println();
 		
-		System.out.println("Normal Case:");
-		display(arr2_normal);
+		System.out.println("Average Case:");
+		display(arr2_avg);
 		// sort the array and get the times
 		start = System.nanoTime();
-		selection_sort(arr2_normal);
-		// sort the array and get the times
-		start = System.nanoTime();
+		selection_sort(arr2_avg);
 		end = System.nanoTime();
-		display(arr2_normal);
-		System.out.println("Time: " + (end-start) + "ms");
+		display(arr2_avg);
+		System.out.println("Time: " + (end-start) + "ns");
 		
 		System.out.println();
 		
@@ -211,12 +204,12 @@
 		selection_sort(arr2_worst);
 		end = System.nanoTime();
 		display(arr2_worst);
-		System.out.println("Time: " + (end-start) + "ms");
+		System.out.println("Time: " + (end-start) + "ns");
 		
 		System.out.println();
 
 		// Selection Sort
-		System.out.println("-----Insertion Sort-----");
+		System.out.println("----- Insertion Sort -----");
 
 		System.out.println("Best Case:");
 		display(arr3_best);
@@ -225,18 +218,18 @@
 		insertion_sort(arr3_best);
 		end = System.nanoTime();
 		display(arr3_best);
-		System.out.println("Time: " + (end-start) + "ms");
+		System.out.println("Time: " + (end-start) + "ns");
 		
 		System.out.println();
 		
-		System.out.println("Normal Case:");
-		display(arr3_normal);
+		System.out.println("Average Case:");
+		display(arr3_avg);
 		// sort the array and get the times
 		start = System.nanoTime();
-		insertion_sort(arr3_normal);
+		insertion_sort(arr3_avg);
 		end = System.nanoTime();
-		display(arr3_normal);
-		System.out.println("Time: " + (end-start) + "ms");
+		display(arr3_avg);
+		System.out.println("Time: " + (end-start) + "ns");
 
 		System.out.println();
 		
@@ -247,7 +240,7 @@
 		insertion_sort(arr3_worst);
 		end = System.nanoTime();
 		display(arr3_worst);
-		System.out.println("Time: " + (end-start) + "ms");
+		System.out.println("Time: " + (end-start) + "ns");
 		
 		System.out.println();
 
