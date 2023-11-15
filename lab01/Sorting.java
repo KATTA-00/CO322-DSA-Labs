@@ -4,7 +4,7 @@
  *
  */
 
- public class Sort {
+ public class Sorting {
 
     //create an array of given size and populate it with random data  
     static int [] create_rand_data(int size_of_array) {
@@ -66,7 +66,7 @@
 		boolean flag = true;
 		while (flag) {
 			flag = false;
-			for (int j=0; j < data.length-1; j++){
+			// for (int j=0; j < data.length-1; j++)
 
 				if (data[j] > data[j+1])
 				{
