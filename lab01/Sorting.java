@@ -64,9 +64,11 @@
 	 static void buble_sort(int [] data)  {
 		// Implement 
 		boolean flag = true;
+
 		while (flag) {
 			flag = false;
-			// for (int j=0; j < data.length-1; j++)
+
+			for (int j=0; j < data.length-1; j++)
 
 				if (data[j] > data[j+1])
 				{
@@ -75,8 +77,8 @@
 				}
 				
 			}
-		}
-    }
+
+	}
 
     static void selection_sort(int [] data) {
 		// Implement 

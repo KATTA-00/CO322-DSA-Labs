@@ -4,7 +4,7 @@
  *
  */
 
- public class Sorting_Algo_Measurements {
+ public class SortingMeasurements {
 
     //create an array of given size and populate it with random data  
     static int [] create_rand_data(int size_of_array) {
