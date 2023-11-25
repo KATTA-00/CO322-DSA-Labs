@@ -3,12 +3,13 @@
 h = int(input())
 w = int(input())
 
+MAX_LIMIT = 99999
+
 start = list(map(int, input().strip().split(" ")))
 end = list(map(int, input().strip().split(" ")))
 
 grid = [list(map(int, input().strip("[").strip("]").split(", "))) for i in range(h)]
-
-visited = [ [False] * w  for i in range(h) ]
+count = [ [MAX_LIMIT] * w  for i in range(h) ]
 
 x_values = [1, -1, 0, 0]
 y_values = [0, 0, 1, -1]
@@ -19,33 +20,26 @@ def checkValid(x, y):
     
     return True
 
-count = 0
-
-def dfs(x, y):
-    global count
-    
-    if visited[x][y]:
+def dfs(x, y, c):
+    if count[x][y] <= c:
         return 1
-        
-    visited[x][y] = True
+    
+    count[x][y] = c
     
     if x == end[0] and y == end[1]:
         return 0
-        
-    count +=1 
     
     for i in range(4):
         x_val = x + x_values[i]
         y_val = y + y_values[i]
         
         if checkValid(x_val, y_val):
-            if dfs(x_val, y_val) == 0:
-                return 0
+            dfs(x_val, y_val, c+1)
                 
 
-dfs(start[0], start[1])
+dfs(start[0], start[1], 0)
 
-if (visited[end[0]][end[1]]):
-    print("The minimum distance is " + str(count))
+if (count[end[0]][end[1]] != MAX_LIMIT):
+    print("The minimum distance is " + str(count[end[0]][end[1]]))
 else:
     print("There is no possible path")

@@ -1,4 +1,5 @@
-# Enter your code here. Read input from STDIN. Print output to STDOUT
+# CO322 Lab 03 E19
+# Group Members - E/19/129
 
 h = int(input())
 w = int(input())
@@ -38,8 +39,7 @@ def bfs():
             if x_val == end[0] and y_val == end[1]:
                 return 0
 
-    if bfs() == 0:
-        return 0
+    return bfs()
 
 
 count[start[0]][start[1]] = 0
