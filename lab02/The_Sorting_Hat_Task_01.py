@@ -1,61 +1,4 @@
-# def swap(arr, i, j):
-#     temp = arr[i]
-#     arr[i] = arr[j]
-#     arr[j] = temp
-
-# def partition(arr, start, end):
-
-#     pivot = arr[start][0]
-#     i = start
-#     j = end
-#     print(pivot)
-
-#     while i<j:
-
-#         while arr[i][0] >= pivot and i < end:
-#             i += 1
-
-
-#         while arr[j][0] < pivot and j > start+1:
-#             j -= 1
-
-#         if i>=j:
-#             break
-
-#         swap(arr, i, j)
-
-#     swap(arr, start, j)
-
-#     print(arr)
-
-#     return j
-
-
-
-# def quick_sort_algo(arr, start, end):
-#     print(start, end)
-#     print(arr)
-    
-#     if (start < end):
-
-#         pivot_index = partition(arr, start, end)
-#         print(">> ")
-#         print(arr)
-        
-#         print(">>>>>>")
-#         quick_sort_algo(arr, start, pivot_index-1)
-#         print(">>>>>>>>>>>>")
-#         quick_sort_algo(arr, pivot_index+1, end)
-    
-
-
-
-# def quick_sort(arr):
-#     quick_sort_algo(arr, 0, len(arr)-1)
-
-
-
-def bubble_sort(data):
+def bubble_sort(data, reverse=True):
     flag = True
 
     while flag:
@@ -65,8 +8,8 @@ def bubble_sort(data):
             if data[j] > data[j + 1]:
                 data[j], data[j + 1] = data[j + 1], data[j]
                 flag = True
-
-    data.reverse()
+    if reverse:
+        data.reverse()
 
 num = int(input())
 
@@ -88,7 +31,7 @@ bubble_sort(arr_sorted)
 bubble_sort(bravery_scores)
     
 for i in arr_sorted:
-    arr_dic[i].sort()
+    bubble_sort(arr_dic[i], False)
  
 names_sort = [j for i in [arr_dic[i] for i in arr_sorted] for j in i]
 bravery_scores_sort = [i for i in bravery_scores]
