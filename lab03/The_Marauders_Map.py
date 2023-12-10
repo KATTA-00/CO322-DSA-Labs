@@ -1,3 +1,6 @@
+# CO322 Lab 03 E19
+# Group Members - E/19/129
+
 # Constant for maximum limit
 MAX_LIMIT = 99999
 
